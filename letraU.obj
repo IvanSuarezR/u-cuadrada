@@ -1,0 +1,84 @@
+# Archivo OBJ para la letra U - Índices base 0
+# --------------------------------------------
+
+### Vértices ###
+
+# Palo izquierdo (8 vértices)
+# Frontal:
+v -1.1 -1.0 0.2   # 0 - Inferior izquierdo
+v -0.8 -1.0 0.2   # 1 - Inferior derecho
+v -0.8 1.0 0.2    # 2 - Superior derecho
+v -1.1 1.0 0.2    # 3 - Superior izquierdo
+# Trasero:
+v -1.1 -1.0 -0.2  # 4
+v -0.8 -1.0 -0.2  # 5
+v -0.8 1.0 -0.2   # 6
+v -1.1 1.0 -0.2   # 7
+
+# Base inferior (8 vértices)
+# Frontal:
+v -0.8 -1.0 0.2   # 8  (mismo que 1)
+v 0.5 -1.0 0.2    # 9
+v 0.5 -0.8 0.2    # 10
+v -0.8 -0.8 0.2   # 11
+# Trasero:
+v -0.8 -1.0 -0.2  # 12 (mismo que 5)
+v 0.5 -1.0 -0.2   # 13
+v 0.5 -0.8 -0.2   # 14
+v -0.8 -0.8 -0.2  # 15
+
+# Palo derecho (8 vértices)
+# Frontal:
+v 0.5 -1.0 0.2    # 16 (mismo que 9)
+v 0.8 -1.0 0.2    # 17
+v 0.8 1.0 0.2     # 18
+v 0.5 1.0 0.2     # 19
+# Trasero:
+v 0.5 -1.0 -0.2   # 20 (mismo que 13)
+v 0.8 -1.0 -0.2   # 21
+v 0.8 1.0 -0.2    # 22
+v 0.5 1.0 -0.2    # 23
+
+### Caras (Triángulos) ###
+
+# Palo izquierdo (12 triángulos)
+f 0 1 2   # Frontal inferior
+f 2 3 0   # Frontal superior
+f 4 5 6   # Trasero inferior
+f 6 7 4   # Trasero superior
+f 4 0 3   # Lateral izquierdo
+f 3 7 4
+f 1 5 6   # Lateral derecho
+f 6 2 1
+f 4 5 1   # Base
+f 1 0 4
+f 3 2 6   # Superior
+f 6 7 3
+
+# Base inferior (12 triángulos)
+f 8 9 10
+f 10 11 8
+f 12 13 14
+f 14 15 12
+f 12 8 11
+f 11 15 12
+f 9 13 14
+f 14 10 9
+f 8 12 13
+f 13 9 8
+f 11 15 14
+f 14 10 11
+
+# Palo derecho (12 triángulos)
+f 16 17 18
+f 18 19 16
+f 20 21 22
+f 22 23 20
+f 20 16 19
+f 19 23 20
+f 17 21 22
+f 22 18 17
+f 20 21 17
+f 17 16 20
+f 19 18 22
+f 22 23 19
