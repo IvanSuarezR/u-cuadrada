@@ -1,6 +1,7 @@
 ﻿using OpenTK.Mathematics;
+using OpenTKProject.objetos;
 
-namespace U3DObjeto
+namespace OpenTKProject.Save
 {
     public class Vector3Serializable
     {
@@ -10,16 +11,16 @@ namespace U3DObjeto
 
         public Vector3Serializable() { }
 
-        public Vector3Serializable(OpenTK.Mathematics.Vector3 v)
+        public Vector3Serializable(Vector3 v)
         {
             X = v.X;
             Y = v.Y;
             Z = v.Z;
         }
 
-        public OpenTK.Mathematics.Vector3 ToVector3()
+        public Vector3 ToVector3()
         {
-            return new OpenTK.Mathematics.Vector3(X, Y, Z);
+            return new Vector3(X, Y, Z);
         }
     }
 

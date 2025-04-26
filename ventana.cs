@@ -10,6 +10,7 @@ using LearnOpenTK.Common;
 using U3DObjeto;
 using Vortice.Mathematics;
 using OpenTK.Windowing.Common.Input;
+using OpenTKProject.objetos;
 
 public class UWindow : GameWindow
 {

@@ -2,7 +2,7 @@ using OpenTK.Mathematics;
 using OpenTK.Graphics.OpenGL4;
 using System.Text.Json.Serialization;
 
-namespace U3DObjeto
+namespace OpenTKProject.objetos
 {
     public class Objeto3D
     {

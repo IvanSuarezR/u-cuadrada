@@ -1,9 +1,11 @@
-﻿
-namespace U3DObjeto
+﻿using OpenTKProject.Save;
+
+namespace OpenTKProject.objetos
 {
     public class Escenario
     {
         private List<Objeto3D> objetos;
+
 
         public Escenario()
         {

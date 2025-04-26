@@ -2,8 +2,9 @@
 using System.IO;
 using System.Text.Json;
 using OpenTK.Mathematics;
+using OpenTKProject.objetos;
 
-namespace U3DObjeto
+namespace OpenTKProject.Save
 {
     public static class JsonEscenario
     {
