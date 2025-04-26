@@ -8,7 +8,6 @@ public class GizmoRenderer
     private int circleVbo;
     private int circleVao;
 
-
     private readonly Vector3[] gizmoLines = new Vector3[]
     {
         // Línea eje X (rojo)
@@ -45,7 +44,6 @@ public class GizmoRenderer
         GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, Vector3.SizeInBytes, 0);
         GL.EnableVertexAttribArray(0);
         GL.BindVertexArray(0);
-
     }
 
     public void Render(Matrix4 view, Matrix4 projection, Matrix4 model, int hoveredAxis, string mode)
@@ -58,7 +56,10 @@ public class GizmoRenderer
         {
             RenderRotateGizmo(view, projection, model, hoveredAxis);
         }
-        // más adelante: else if (mode == "escalar") { ... }
+        else if (mode == "escalar")
+        {
+            RenderScaleGizmo(view, projection, model, hoveredAxis);
+        }
     }
 
     private void RenderTranslateGizmo(Matrix4 view, Matrix4 projection, Matrix4 model, int hoveredAxis)
@@ -133,6 +134,41 @@ public class GizmoRenderer
         }
     }
 
+    private void RenderScaleGizmo(Matrix4 view, Matrix4 projection, Matrix4 model, int hoveredAxis)
+    {
+        const float scaleSize = 1.5f;
+
+        // Definir los ejes del gizmo de escala
+        Vector3[] scaleGizmo = new Vector3[]
+        {
+        new Vector3(0f, 0f, 0f), new Vector3(scaleSize, 0f, 0f), // Eje X
+        new Vector3(0f, 0f, 0f), new Vector3(0f, scaleSize, 0f), // Eje Y
+        new Vector3(0f, 0f, 0f), new Vector3(0f, 0f, scaleSize), // Eje Z
+        };
+
+        GL.BindVertexArray(vao);
+        GL.BindBuffer(BufferTarget.ArrayBuffer, vbo);
+        GL.BufferData(BufferTarget.ArrayBuffer, Vector3.SizeInBytes * scaleGizmo.Length, scaleGizmo, BufferUsageHint.StaticDraw);
+
+        // Eje X
+        var colorX = hoveredAxis == 0 ? new Vector3(1f, 0.5f, 0.5f) : new Vector3(1f, 0f, 0f); // rojo
+        lineShader.Use(model, view, projection, colorX);
+        GL.DrawArrays(PrimitiveType.Lines, 0, 2);
+
+        // Eje Y
+        var colorY = hoveredAxis == 1 ? new Vector3(0.5f, 1f, 0.5f) : new Vector3(0f, 1f, 0f); // verde
+        lineShader.Use(model, view, projection, colorY);
+        GL.DrawArrays(PrimitiveType.Lines, 2, 2);
+
+        // Eje Z
+        var colorZ = hoveredAxis == 2 ? new Vector3(0.5f, 0.5f, 1f) : new Vector3(0f, 0f, 1f); // azul
+        lineShader.Use(model, view, projection, colorZ);
+        GL.DrawArrays(PrimitiveType.Lines, 4, 2);
+
+        GL.BindVertexArray(0);
+    }
+
+
     public void DrawDebugLine(Vector3 start, Vector3 end, Vector3 color, Matrix4 view, Matrix4 projection)
     {
         Vector3[] vertices = new Vector3[] { start, end };
@@ -154,7 +190,5 @@ public class GizmoRenderer
         GL.DeleteBuffer(tempVbo);
         GL.DeleteVertexArray(tempVao);
     }
-
-
 }
 

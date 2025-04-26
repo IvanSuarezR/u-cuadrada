@@ -13,17 +13,18 @@ namespace U3DObjeto
         private int selectedIndex = -1;
         public int SelectedIndex => selectedIndex;
 
-        private Vector3TK position = Vector3TK.Zero;
-        private Vector3TK rotation = Vector3TK.Zero;
-        private Vector3TK scale = Vector3TK.One;
+        private Vector3N editPos = Vector3N.Zero;
+        private Vector3N editRot = Vector3N.Zero;
+        private Vector3N editScale = Vector3N.One;
 
-        // Propiedades adicionales para la transformación (que no se han eliminado)
+        private bool editingPos = false;
+        private bool editingRot = false;
+        private bool editingScale = false;
+
         private enum TransformMode { Ninguno, Mover, Escalar, Rotar }
         private TransformMode currentMode;
-        public string ModoGizmo => currentMode.ToString().ToLower(); // "move", "scale", "rotate"
+        public string ModoGizmo => currentMode.ToString().ToLower();
 
-
-        // Cámara y ventana (si necesitas hacer algo relacionado)
         private Camera camera;
         private GameWindow window;
 
@@ -46,9 +47,10 @@ namespace U3DObjeto
                 {
                     selectedIndex = i;
                     var obj = objetos[i];
-                    position = obj.Position;
-                    rotation = obj.Rotation;
-                    scale = obj.Scale;
+                    editPos = ConvertToNumerics(obj.Position);
+                    editRot = ConvertToNumerics(obj.Rotation);
+                    editScale = ConvertToNumerics(obj.Scale);
+                    editingPos = editingRot = editingScale = false;
                 }
             }
 
@@ -59,41 +61,63 @@ namespace U3DObjeto
 
                 var obj = objetos[selectedIndex];
 
-                // Mostrar directamente la posición actual
-                Vector3N pos = ConvertToNumerics(obj.Position);
-                Vector3N rot = ConvertToNumerics(obj.Rotation);
-                Vector3N scl = ConvertToNumerics(obj.Scale);
+                // Actualizar valores en tiempo real mientras no se está editando
+                if (!editingPos)
+                    editPos = ConvertToNumerics(obj.Position);
+                if (!editingRot)
+                    editRot = ConvertToNumerics(obj.Rotation);
+                if (!editingScale)
+                    editScale = ConvertToNumerics(obj.Scale);
 
-                // Modificables desde la UI
-                if (ImGui.InputFloat3("Posición", ref pos))
-                    obj.Position = ConvertToOpenTK(pos);
+                // Posición
+                ImGui.PushID("Pos");
+                ImGui.InputFloat3("Posición", ref editPos);
+                if (ImGui.IsItemActivated()) editingPos = true;
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    obj.Position = ConvertToOpenTK(editPos);
+                    editingPos = false;
+                }
+                ImGui.PopID();
 
-                if (ImGui.InputFloat3("Rotación", ref rot))
-                    obj.Rotation = ConvertToOpenTK(rot);
+                // Rotación
+                ImGui.PushID("Rot");
+                ImGui.InputFloat3("Rotación", ref editRot);
+                if (ImGui.IsItemActivated()) editingRot = true;
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    obj.Rotation = ConvertToOpenTK(editRot);
+                    editingRot = false;
+                }
+                ImGui.PopID();
 
-                if (ImGui.InputFloat3("Escala", ref scl))
-                    obj.Scale = ConvertToOpenTK(scl);
+                // Escala
+                ImGui.PushID("Esc");
+                ImGui.InputFloat3("Escala", ref editScale);
+                if (ImGui.IsItemActivated()) editingScale = true;
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    obj.Scale = ConvertToOpenTK(editScale);
+                    editingScale = false;
+                }
+                ImGui.PopID();
 
                 if (ImGui.Button("Mover"))
                     currentMode = TransformMode.Mover;
-
                 if (ImGui.Button("Escalar"))
                     currentMode = TransformMode.Escalar;
-
                 if (ImGui.Button("Rotar"))
                     currentMode = TransformMode.Rotar;
 
-                // Botón para eliminar el objeto seleccionado
                 if (ImGui.Button("Eliminar Objeto"))
                 {
                     objetos[selectedIndex].Cleanup();
                     objetos.RemoveAt(selectedIndex);
                     selectedIndex = -1;
                 }
+
                 ImGui.Text($"Modo actual: {ModoGizmo}");
-
             }
-
 
             ImGui.End();
         }

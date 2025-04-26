@@ -207,6 +207,38 @@ public class UWindow : GameWindow
                         OpenTK.Mathematics.MathHelper.RadiansToDegrees(newEuler.Z)
                     );
                 }
+                else if (uiManager.ModoGizmo == "escalar")
+                {
+                    // Para el escalado, el valor de delta se usará para aumentar o disminuir la escala
+                    float scaleAmount = 1.0f + (delta.X * 0.01f); // Ajuste del delta X para el escalado
+
+                    // Asegurarse de que el escalado sólo ocurra en el eje seleccionado
+                    if (axisMove == Vector3.UnitX)
+                    {
+                                selectedObj.Scale = new Vector3(
+                                    Math.Max(selectedObj.Scale.X * scaleAmount, 0.1f), // Escalar solo en X
+                                    selectedObj.Scale.Y,
+                                    selectedObj.Scale.Z
+                                    );
+                    }
+                    else if (axisMove == Vector3.UnitY)
+                    {
+                        selectedObj.Scale = new Vector3(
+                            selectedObj.Scale.X,
+                            Math.Max(selectedObj.Scale.Y * scaleAmount, 0.1f), // Escalar solo en Y
+                            selectedObj.Scale.Z
+                        );
+                    }
+                    else if (axisMove == Vector3.UnitZ)
+                    {
+                        selectedObj.Scale = new Vector3(
+                            selectedObj.Scale.X,
+                            selectedObj.Scale.Y,
+                            Math.Max(selectedObj.Scale.Z * scaleAmount, 0.1f) // Escalar solo en Z
+                        );
+                    }
+                }
+
 
             }
         }
@@ -239,11 +271,15 @@ public class UWindow : GameWindow
         {
             var selectedObj = escenario.GetObjetos()[uiManager.SelectedIndex];
             Matrix4 model = selectedObj.GetModelMatrix();
+            
 
             string modo = uiManager.ModoGizmo;
 
             if (modo != "ninguno")
             {
+                if (modo == "rotar")
+                    model = Matrix4.CreateTranslation(selectedObj.Position);
+
                 int hoveredAxis = -1;
                 if (IsMouseOverAxis(Vector3.UnitX, model, out _))
                     hoveredAxis = 0;
@@ -306,22 +342,6 @@ public class UWindow : GameWindow
         Vector3 axisEnd = gizmoOrigin + axisWorldDir * 1.5f; // alarga el eje para mejor detección
         
         float distance = DistanceBetweenRayAndSegment(ray.Origin, ray.Direction, gizmoOrigin, axisEnd, out axisHitFactor) - 0.20f;
-        //Console.WriteLine($"Eje: {axisWorldDir}, Origen: {gizmoOrigin}, Fin: {axisEnd}, Distance: {distance}, Mouse: {ray.Origin}");
-        //Console.WriteLine($"Eje: {axisWorldDir}, Origen: {gizmoOrigin}, Fin: {axisEnd}, Distance: {distance}");
-        //Console.WriteLine($"Mouse: {mousePos}");
-        //return distance > 0f && distance < 0.15f; // sensibilidad más precisa
-        if (axisWorldDir.X == 1)
-        {
-            return distance > -0.05f && distance < 0.5f;
-        }
-        else if (axisWorldDir.Y == 1)
-        {
-            return distance < 0.1f;
-        }
-        else if (axisWorldDir.Z == 1)
-        {
-            return distance > -0.05f && distance < 0.5f;
-        }
         
         return distance < 0.1f;
     }
