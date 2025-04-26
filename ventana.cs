@@ -156,12 +156,14 @@ public class UWindow : GameWindow
                 else if (isHoveringZ) { isDragging = true; axisMove = Vector3.UnitZ; }
 
                 if (isDragging) lastMousePos = MouseState.Position;
+                CursorState = CursorState.Grabbed;
             }
 
             // Fin del arrastre
             if (MouseState.IsButtonReleased(MouseButton.Left))
             {
                 isDragging = false;
+                CursorState = CursorState.Normal;
             }
 
             // Movimiento durante el arrastre

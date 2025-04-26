@@ -7,24 +7,20 @@
       "RelativeMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|solutionrelative:ventana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|c:\\users\\suarezz\\source\\repos\\u-cuadrada\\embeddedshader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|solutionrelative:embeddedshader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|c:\\users\\suarezz\\source\\repos\\u-cuadrada\\clase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|solutionrelative:clase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|c:\\users\\suarezz\\source\\repos\\u-cuadrada\\editoroverlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|solutionrelative:editoroverlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|c:\\users\\suarezz\\source\\repos\\u-cuadrada\\gizmorenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|solutionrelative:gizmorenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|c:\\users\\suarezz\\source\\repos\\u-cuadrada\\escenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|solutionrelative:escenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|c:\\users\\suarezz\\source\\repos\\u-cuadrada\\gizmorenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|solutionrelative:gizmorenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|c:\\users\\suarezz\\source\\repos\\u-cuadrada\\editoroverlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|solutionrelative:editoroverlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|c:\\users\\suarezz\\source\\repos\\u-cuadrada\\clase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F42ADC0A-0F82-0A0F-7CF2-CA3A497C4410}|OpenTKProject.csproj|solutionrelative:clase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,28 +30,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EmbeddedShader.cs",
-              "DocumentMoniker": "C:\\Users\\SuarezZ\\source\\repos\\u-cuadrada\\EmbeddedShader.cs",
-              "RelativeDocumentMoniker": "EmbeddedShader.cs",
-              "ToolTip": "C:\\Users\\SuarezZ\\source\\repos\\u-cuadrada\\EmbeddedShader.cs",
-              "RelativeToolTip": "EmbeddedShader.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T00:18:59.093Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Escenario.cs",
               "DocumentMoniker": "C:\\Users\\SuarezZ\\source\\repos\\u-cuadrada\\Escenario.cs",
               "RelativeDocumentMoniker": "Escenario.cs",
@@ -67,15 +50,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "GizmoRenderer.cs",
               "DocumentMoniker": "C:\\Users\\SuarezZ\\source\\repos\\u-cuadrada\\GizmoRenderer.cs",
               "RelativeDocumentMoniker": "GizmoRenderer.cs",
               "ToolTip": "C:\\Users\\SuarezZ\\source\\repos\\u-cuadrada\\GizmoRenderer.cs",
               "RelativeToolTip": "GizmoRenderer.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwHMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAIwDUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T01:05:47.092Z"
+              "WhenOpened": "2025-04-24T01:05:47.092Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -85,7 +69,7 @@
               "RelativeDocumentMoniker": "ventana.cs",
               "ToolTip": "C:\\Users\\SuarezZ\\source\\repos\\u-cuadrada\\ventana.cs",
               "RelativeToolTip": "ventana.cs",
-              "ViewState": "AgIAALoAAAAAAAAAAAAIwNIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAiwJ8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-19T04:35:02.235Z",
               "EditorCaption": ""
@@ -98,13 +82,13 @@
               "RelativeDocumentMoniker": "EditorOverlay.cs",
               "ToolTip": "C:\\Users\\SuarezZ\\source\\repos\\u-cuadrada\\EditorOverlay.cs",
               "RelativeToolTip": "EditorOverlay.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAIwE0AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAowAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-24T03:55:27.119Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "clase.cs",
               "DocumentMoniker": "C:\\Users\\SuarezZ\\source\\repos\\u-cuadrada\\clase.cs",
               "RelativeDocumentMoniker": "clase.cs",
@@ -112,8 +96,7 @@
               "RelativeToolTip": "clase.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T06:14:31.075Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T06:14:31.075Z"
             }
           ]
         }
